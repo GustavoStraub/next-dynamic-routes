@@ -23,11 +23,6 @@ type UserProps = {
 
 export default function user({ data }: Props): ReactElement {
 
-  const [User, setUser] = useState<UserProps>()
-
-  const { query } = useRouter()
-
-
   const CharactersList = useMemo(() => (
     data?.Characters.map(((Character: Character, i) => {
       return <div key={i}>

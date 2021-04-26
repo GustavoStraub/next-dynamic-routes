@@ -1,9 +1,10 @@
+import React, { ReactElement } from 'react'
 import axios from 'axios'
 import { GetStaticProps } from 'next'
 import { useMemo } from 'react'
 import Link from 'next/link'
 
-export default function Home({ data }) {
+export default function Home({ data }): ReactElement {
 
   const User = useMemo(() => (
     data?.map(((user, i) => {
@@ -17,7 +18,7 @@ export default function Home({ data }) {
 
   return (
     <>
-      { User}
+      {User}
     </>
   )
 }
