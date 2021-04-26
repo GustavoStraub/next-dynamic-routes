@@ -1,33 +1,16 @@
 import React, { ReactElement } from 'react'
-import axios from 'axios'
 import { GetStaticProps } from 'next'
-import { useMemo } from 'react'
 import Link from 'next/link'
+import { Instace } from '../services/instance'
 
-interface Props {
-  data: UserProps[];
-}
-
-type Character = {
-  For: string;
-  Img: string;
-  Name: string;
-  _id: string;
-}
-
-type UserProps = {
-  _id: string;
-  Characters: Character[];
-  Username: string;
-}
-export default function Home({ data }: Props): ReactElement {
+export default function Home({ data }: any): ReactElement {
 
   return (
     <>
-      {data?.map(((user, i) => {
+      {data?.results.map(((pokemon, i) => {
         return <div key={i}>
-          <Link href={`/users/${user.Username}`}>
-            {user.Username}
+          <Link href={`/pokemons/${pokemon.name}`}>
+            {pokemon.name}
           </Link>
         </div>
       }))}
@@ -36,7 +19,7 @@ export default function Home({ data }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get('https://ordenamento-api.herokuapp.com/users')
+  const { data } = await Instace.get('pokemon')
 
   return {
     props: {
