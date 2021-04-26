@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const { username } = ctx.params
 
-  const { data } = await axios.get(`http://localhost:4000/users/${username}`)
+  const { data } = await axios.get(`https://ordenamento-api.herokuapp.com/${username}`)
 
   return {
     props: {

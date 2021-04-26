@@ -36,7 +36,7 @@ export default function Home({ data }: Props): ReactElement {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get('http://localhost:4000/users')
+  const { data } = await axios.get('https://ordenamento-api.herokuapp.com/users')
 
   return {
     props: {
