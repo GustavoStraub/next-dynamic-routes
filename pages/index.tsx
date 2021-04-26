@@ -4,7 +4,23 @@ import { GetStaticProps } from 'next'
 import { useMemo } from 'react'
 import Link from 'next/link'
 
-export default function Home({ data }): ReactElement {
+interface Props {
+  data: UserProps[];
+}
+
+type Character = {
+  For: string;
+  Img: string;
+  Name: string;
+  _id: string;
+}
+
+type UserProps = {
+  _id: string;
+  Characters: Character[];
+  Username: string;
+}
+export default function Home({ data }: Props): ReactElement {
 
   const User = useMemo(() => (
     data?.map(((user, i) => {
