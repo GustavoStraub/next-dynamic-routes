@@ -22,19 +22,15 @@ type UserProps = {
 }
 export default function Home({ data }: Props): ReactElement {
 
-  const User = useMemo(() => (
-    data?.map(((user, i) => {
-      return <div key={i}>
-        <Link href={`/users/${user.Username}`}>
-          {user.Username}
-        </Link>
-      </div>
-    }))
-  ), [data])
-
   return (
     <>
-      {User}
+      {data?.map(((user, i) => {
+        return <div key={i}>
+          <Link href={`/users/${user.Username}`}>
+            {user.Username}
+          </Link>
+        </div>
+      }))}
     </>
   )
 }
