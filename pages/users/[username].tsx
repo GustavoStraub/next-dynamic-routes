@@ -56,7 +56,7 @@ export default function user({ data }: Props): ReactElement {
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true
+    fallback: 'blocking'
   }
 }
 
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const { username } = ctx.params
 
-  const { data } = await axios.get(`https://ordenamento-api.herokuapp.com/${username}`)
+  const { data } = await axios.get(`https://ordenamento-api.herokuapp.com/users/${username}`)
 
   return {
     props: {
