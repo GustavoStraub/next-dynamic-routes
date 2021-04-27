@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { Instace } from '../../services/instance'
 
 export default function user({ data }: any): ReactElement {
+
   return (
     <div>
       <div>
@@ -13,6 +14,10 @@ export default function user({ data }: any): ReactElement {
       </div>
       <div>
         Nome: {data.name}
+     Abilities:
+     {data.abilities.map((a, i) => {
+        return <div key={i}>{i + 1}.{a.ability.name}</div>
+      })}
       </div>
       <img height='200px' src={data.sprites.front_default} alt={data.name} />
     </div>

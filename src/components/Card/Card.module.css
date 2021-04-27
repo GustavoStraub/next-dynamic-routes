@@ -1,0 +1,22 @@
+.Card {
+  color: #fff;
+  border: 2px solid var(--lightBlue);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  height: 300px;
+  width: 300px;
+}
+
+.Card:hover {
+  filter: brightness(1.2);
+}
+
+.Image {
+  height: 350px;
+  width: auto;
+}

@@ -1,0 +1,30 @@
+.Search {
+  background: #d5d5d5;
+  color: #000;
+  border: 1px solid var(--lightBlue);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  position: fixed;
+  width: 200px;
+}
+
+.ResetButton {
+  padding: 5px 10px;
+  border: 1px solid var(--lightBlue);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  position: fixed;
+  left: 200px;
+}
+
+.List{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2em;
+}
