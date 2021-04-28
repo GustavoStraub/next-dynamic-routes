@@ -23,8 +23,10 @@ export default function Home({ }: any): ReactElement {
     () =>
       Pokemons?.map(((pokemon, i) => {
         return (
-          <Link key={i} href={`/pokemons/${pokemon.name}`}>
-            <Card name={pokemon.name} url={pokemon.url} />
+          <Link key={pokemon.url} href={`/pokemons/${pokemon.name}`}>
+            <div>
+              <Card name={pokemon.name} url={pokemon.url} />
+            </div>
           </Link>
         )
       }))

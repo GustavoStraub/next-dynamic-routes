@@ -10,10 +10,15 @@
   text-transform: capitalize;
   height: 300px;
   width: 300px;
+  img{
+    transition: all .5s;
+  }
 }
 
 .Card:hover {
-  filter: brightness(1.2);
+  img{
+    transform: scale(1.15);
+  }
 }
 
 .Image {

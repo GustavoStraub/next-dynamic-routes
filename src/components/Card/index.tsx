@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { usePhotos } from '../../hooks/useFetch'
-import style from './Card.module.css'
+import style from './Card.module.scss'
 
 interface Props {
   url: string;

@@ -3,24 +3,28 @@ import Link from 'next/link'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Instace } from '../../services/instance'
 
-export default function user({ data }: any): ReactElement {
+import style from './Pokemons.module.css'
+
+export default function pokemons({ data }: any): ReactElement {
 
   return (
-    <div>
-      <div>
-        <Link href='/'>
-          <button>Voltar</button>
-        </Link>
+    <>
+      <Link href='/'>
+        <button className={style.Back}>Voltar</button>
+      </Link>
+      <div className={style.Card}>
+        <div className={style.Left}>
+          Nome: {data.name}
+          <img height='200px' src={data.sprites.front_default} alt={data.name} />
+        </div>
+        <div className={style.Right}>
+          Abilities:
+          {data.abilities.map((a, i) => {
+          return <div key={i}>{i + 1}.{a.ability.name}</div>
+        })}
+        </div>
       </div>
-      <div>
-        Nome: {data.name}
-     Abilities:
-     {data.abilities.map((a, i) => {
-        return <div key={i}>{i + 1}.{a.ability.name}</div>
-      })}
-      </div>
-      <img height='200px' src={data.sprites.front_default} alt={data.name} />
-    </div>
+    </>
   )
 }
 

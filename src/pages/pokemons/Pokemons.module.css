@@ -1,0 +1,28 @@
+.Card {
+  display: flex;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.Back {
+  padding: 5px 10px;
+  border: 1px solid var(--lightBlue);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.Name {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.Right, .Left{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+} 
+
+.Left {
+  align-items: center;
+  justify-content: center;
+}
