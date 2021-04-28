@@ -2,7 +2,7 @@ import React, { ReactElement, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useFetch } from '../hooks/useFetch'
 import { Card } from '../components/Card'
-
+import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ }: any): ReactElement {
@@ -35,6 +35,7 @@ export default function Home({ }: any): ReactElement {
   );
   return (
     <>
+    <Head><title>Pokedex</title></Head>
       <input
         className={styles.Search}
         type='text'

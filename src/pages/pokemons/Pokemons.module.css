@@ -1,7 +1,19 @@
+.Wrapper{
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
 .Card {
   display: flex;
+  align-items: center;
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
+  border: 1px solid var(--lightBlue);
+  border-radius: 5px;
+  padding: 1em;
 }
 
 .Back {
@@ -9,20 +21,50 @@
   border: 1px solid var(--lightBlue);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
-.Name {
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.Right, .Left{
+.Right, .Left {
   width: 50%;
   display: flex;
-  flex-direction: column;
-} 
+  padding: 0 10px;
+}
 
 .Left {
   align-items: center;
   justify-content: center;
+  border-right: 1px solid var(--lightBlue);
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: capitalize;
+  flex-direction: column;
+}
+
+.Right {
+  justify-content: space-evenly;
+  color: #fff;
+  text-transform: capitalize;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.AbilityWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.typeWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.types {
+  width: 80px;
+  text-align: center;
+  padding: 3px 0;
+  border-radius: 5px;
 }
