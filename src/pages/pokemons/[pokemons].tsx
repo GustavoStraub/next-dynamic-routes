@@ -13,8 +13,6 @@ const capitalize = (s) => {
 
 export default function pokemons({ data }: any): ReactElement {
 
-
-  console.log(data)
   return (
     <div className={style.Wrapper}>
       <Head>
